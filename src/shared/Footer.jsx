@@ -8,7 +8,7 @@ const Footer = () => {
 
                 {/* Logo & Slogan */}
                 <div>
-                    <h2 className="text-2xl font-bold mb-2">📘 EduTrack</h2>
+                    <h2 className="text-2xl font-bold mb-2">📘 CourseManagement</h2>
                     <p className="text-sm text-gray-400">Learn, move forward, and build your future.</p>
                     <div className="flex space-x-4 mt-4">
                         <a href="#" className="text-xl hover:text-blue-500"><FaFacebook /></a>
