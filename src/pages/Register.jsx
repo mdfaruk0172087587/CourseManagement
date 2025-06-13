@@ -1,16 +1,30 @@
-import React from 'react';
+import { AuthContext } from '../contex/AuthContex';
+import UseHock from '../hock/UseHock';
 
 const Register = () => {
+   
+    const {register} = UseHock();
+
+    
     const handleRegister = (e) =>{
         e.preventDefault();
         const form = e.target;
-        
+       
         const name = form.name.value;
         const email = form.email.value;
         const photo = form.photo.value;
         const password = form.password.value;
         const confirmPassword = form.confirmPassword.value;
         console.log(name, email, photo, password, confirmPassword)
+
+        // register
+        register(email, password)
+        .then(result => {
+            console.log(result)
+        })
+        .then(error => {
+            console.log(error)
+        })
     }
     return (
        
