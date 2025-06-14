@@ -8,6 +8,7 @@ import Register from "../pages/Register";
 import Login from "../pages/Login";
 import AddCourse from "../pages/AddCourse";
 import PrivateRoute from "../privateRouter/PrivateRoute";
+import Loading from "../shared/Loading";
 
 export const router = createBrowserRouter([
   {
@@ -17,6 +18,8 @@ export const router = createBrowserRouter([
         {
             path:'/',
             element: <Home></Home>,
+            loader: () => fetch('http://localhost:3000/courses'),
+            hydrateFallbackElement: <Loading></Loading>
         },
         {
             path:'/courses',
