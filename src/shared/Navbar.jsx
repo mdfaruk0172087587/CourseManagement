@@ -78,7 +78,7 @@ const Navbar = () => {
             </>
               :
               <>
-                <Link className='btn btn-primary mr-3'>Login</Link>
+                <Link to='/login' className='btn btn-primary mr-3'>Login</Link>
                 <Link to='/register' className='btn btn-primary'>Register</Link>
               </>
           }
