@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 
 const Navbar = () => {
   const { user, logOut } = UseHock();
-  console.log(user)
+  
   const Links = <>
     <li><NavLink to='/' className={({ isActive }) => isActive ? 'bg-amber-300' : ''}>Home</NavLink></li>
     <li><NavLink to='/courses' className={({ isActive }) => isActive ? 'bg-amber-300' : ''}>Courses</NavLink></li>
