@@ -12,11 +12,13 @@ import Loading from "../shared/Loading";
 import CourseDetails from "../pages/CourseDetails";
 import ManageCourses from "../pages/ManageCourses";
 import Edit from "../shared/Edit";
+import NotFound from "../pages/NotFound ";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayOut></HomeLayOut>,
+    errorElement: <NotFound></NotFound>,
     children:[
         {
             path:'/',

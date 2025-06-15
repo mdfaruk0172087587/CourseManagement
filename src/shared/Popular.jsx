@@ -1,24 +1,28 @@
 import React from 'react';
 
-const Popular = ({item}) => {
-    const {image, title, instructorName, duration, _id, createdAt} = item;
+const Popular = ({ item }) => {
+    const { image, title, instructorName, duration, _id, createdAt, enrollCount } = item;
     return (
-         <div  className="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+        <div className="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300">
             <figure>
-              <img src={image} alt={title} className="h-56 w-full object-cover" />
+                <img src={image} alt={title} className="h-56 w-full object-cover" />
             </figure>
             <div className="card-body">
-              <h2 className="card-title">{title}</h2>
-              <p className="text-sm text-gray-500">
-                Added on: {new Date(createdAt).toLocaleDateString()}
-              </p>
-              <p className="text-sm text-gray-600">Instructor: {instructorName}</p>
-              <p className="text-sm text-gray-600">Duration: {duration}</p>
-              <div className="card-actions justify-end mt-4">
+                <h2 className="card-title">{title}</h2>
+                <p className="text-sm text-gray-500">
+                    Added on: {new Date(createdAt).toLocaleDateString()}
+                </p>
                 
-              </div>
+
+
+               
+                <p className="text-sm text-gray-600">Instructor: {instructorName}</p>
+                <p className="text-sm text-gray-600 ">Duration: {duration}</p>
+                
+                    <p className="text-sm text-gray-600 ">enrollCount: {enrollCount}</p>
+
             </div>
-          </div>
+        </div>
     );
 };
 
