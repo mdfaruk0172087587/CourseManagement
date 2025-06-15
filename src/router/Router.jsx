@@ -11,6 +11,7 @@ import PrivateRoute from "../privateRouter/PrivateRoute";
 import Loading from "../shared/Loading";
 import CourseDetails from "../pages/CourseDetails";
 import ManageCourses from "../pages/ManageCourses";
+import Edit from "../shared/Edit";
 
 export const router = createBrowserRouter([
   {
@@ -45,6 +46,13 @@ export const router = createBrowserRouter([
             <ManageCourses></ManageCourses>
           </PrivateRoute>,
          
+        },
+        {
+          path : '/edit/:id',
+          element : <PrivateRoute>
+            <Edit></Edit>
+          </PrivateRoute>,
+          loader : ({params}) => fetch(`http://localhost:3000/courses/${params.id}`)
         },
         {
             path: '/register',
