@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router';
 import UseHock from '../hock/UseHock';
 import axios from 'axios';
@@ -8,16 +8,44 @@ import Swal from 'sweetalert2';
 const CourseDetails = () => {
     const [enroll, setEnroll] = useState(false)
     const data = useLoaderData();
-    const { title, image, duration, instructorName, instructorEmail, createdAt, description, _id } = data;
-
+    const { title, image, duration, instructorName, instructorEmail, createdAt, description, _id , enrollCount} = data;
+    const [updateCount, setUpdateCount] = useState(enrollCount)
     const { user } = UseHock();
+    useEffect(() => {
+        if(user?.email){
+            axios.get(`http://localhost:3000/enrollments?email=${user.email}`)
+            .then(res => {
+               const find = res.data.find(item => item.enrollId === _id)
+               setEnroll(find)
+            })
+        }
+    }, [user, _id])
 
     //    handleEnroll
     const handleEnroll = () => {
         const email = user.email;
         const enrollId = _id;
         const enrollPost = { email, enrollId }
-        
+
+        // update enrollCount
+        const newCount = updateCount +1;
+        axios.put(`http://localhost:3000/courses/${_id}`, {enrollCount: newCount})
+        .then(res => {
+           if(res.data.modifiedCount){
+            setUpdateCount(newCount)
+           }
+        })
+        .catch(error => {
+            Swal.fire({
+                    position: "top-end",
+                    icon: "error",
+                    title: error.message,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+        })
+       
+        // post enrollments
         axios.post('http://localhost:3000/enrollments', enrollPost)
             .then(res => {
                 if (res.data.insertedId) {
