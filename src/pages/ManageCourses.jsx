@@ -12,7 +12,7 @@ const ManageCourses = () => {
                 .then(data => setManageCourse(data))
         }
     }, [user])
-    
+
     return (
         <div>
             <div className="max-w-6xl mx-auto px-4 py-8">
@@ -28,7 +28,7 @@ const ManageCourses = () => {
                         </thead>
                         <tbody>
                             {
-                                manageCourse.map(manage => <Manage key={manage._id} manage={manage}></Manage>)
+                                manageCourse.map(manage => <Manage key={manage._id} manage={manage} setManageCourse={setManageCourse} manageCourse={manageCourse}></Manage>)
                             }
                             {manageCourse.length === 0 && (
                                 <tr>
@@ -39,8 +39,7 @@ const ManageCourses = () => {
                     </table>
                 </div>
             </div>
-
-
+           
 
         </div>
     );
