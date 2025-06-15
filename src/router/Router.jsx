@@ -9,6 +9,7 @@ import Login from "../pages/Login";
 import AddCourse from "../pages/AddCourse";
 import PrivateRoute from "../privateRouter/PrivateRoute";
 import Loading from "../shared/Loading";
+import CourseDetails from "../pages/CourseDetails";
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +31,12 @@ export const router = createBrowserRouter([
           element: <PrivateRoute>
             <AddCourse></AddCourse>
           </PrivateRoute>
+        },
+        {
+          path : '/courseDetails/:id',
+          element : <CourseDetails></CourseDetails>,
+          loader: ({params}) => fetch(`http://localhost:3000/courses/${params.id}`),
+          hydrateFallbackElement: <Loading></Loading>
         },
         {
             path: '/register',

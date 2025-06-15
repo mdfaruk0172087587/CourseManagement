@@ -3,6 +3,7 @@ import React from 'react';
 import UseHock from '../hock/UseHock';
 
 const AddCourse = () => {
+  
 const {user} = UseHock();
     // handleAddCourse
     const handleAddCourse = (e) =>{
@@ -20,7 +21,7 @@ const {user} = UseHock();
                 alert('your post successfully')
             }
         })
-        .then(error =>{
+        .catch(error =>{
            console.log(error.message)
         })
     }

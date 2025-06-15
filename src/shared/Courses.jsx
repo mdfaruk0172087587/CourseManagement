@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 
 const Courses = ({course}) => {
     const {image, title, instructorName, duration, _id, createdAt} = course;
+    
     return (
        <div  className="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300">
             <figure>
@@ -16,7 +17,7 @@ const Courses = ({course}) => {
               <p className="text-sm text-gray-600">Instructor: {instructorName}</p>
               <p className="text-sm text-gray-600">Duration: {duration}</p>
               <div className="card-actions justify-end mt-4">
-                <Link >
+                <Link to={`/courseDetails/${_id}`}>
                   <button className="btn btn-sm btn-primary">Details</button>
                 </Link>
               </div>
