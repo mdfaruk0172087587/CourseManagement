@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import UseHock from '../hock/UseHock';
 import Manage from '../shared/Manage';
+import { Helmet } from 'react-helmet-async';
 
 const ManageCourses = () => {
     const { user } = UseHock();
@@ -14,8 +15,11 @@ const ManageCourses = () => {
     }, [user])
 
     return (
-        <div>
+        
             <div className="max-w-6xl mx-auto px-4 py-8">
+                <Helmet>
+                    <title>Manage Course</title>
+                </Helmet>
                 <h1 className="text-3xl font-bold mb-6 text-center">Manage Your Courses</h1>
                 <div className="overflow-x-auto">
                     <table className="table w-full border">
@@ -41,7 +45,7 @@ const ManageCourses = () => {
             </div>
            
 
-        </div>
+       
     );
 };
 

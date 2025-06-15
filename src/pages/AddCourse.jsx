@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import UseHock from '../hock/UseHock';
+import { Helmet } from 'react-helmet-async';
 
 const AddCourse = () => {
   
@@ -29,6 +30,9 @@ const {user} = UseHock();
        
             
     <div className="card bg-base-100 mx-auto my-5 w-full max-w-sm shrink-0 shadow-2xl">
+      <Helmet>
+        <title>Add Course</title>
+      </Helmet>
       <div className="card-body">
               <h1 className="text-3xl text-center font-bold">Add Course</h1>
 

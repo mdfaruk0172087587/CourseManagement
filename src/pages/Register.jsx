@@ -2,6 +2,7 @@ import Swal from 'sweetalert2';
 import { AuthContext } from '../contex/AuthContex';
 import UseHock from '../hock/UseHock';
 import { useNavigate } from 'react-router';
+import { Helmet } from 'react-helmet-async';
 
 const Register = () => {
 
@@ -91,8 +92,9 @@ const Register = () => {
 
 
         <div className="card bg-base-100 w-full  max-w-sm flex justify-center shrink-0 shadow-2xl my-5 mx-auto">
-
-
+            <Helmet>
+                <title>Register Page</title>
+            </Helmet>
             <div className="card-body">
                 <h1 className="text-3xl text-center font-bold">Register now!</h1>
                 <form onSubmit={handleRegister} className="fieldset">

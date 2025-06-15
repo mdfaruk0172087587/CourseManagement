@@ -8,7 +8,7 @@ const Navbar = () => {
   
   const Links = user ? <>
   <li><NavLink to='/' className={({ isActive }) => isActive ? 'bg-amber-300' : ''}>Home</NavLink></li>
-    <li><NavLink to='/courses' className={({ isActive }) => isActive ? 'bg-amber-300' : ''}>Courses</NavLink></li>
+    <li><NavLink to='/courses' className={({ isActive }) => isActive ? 'bg-amber-300' : ''}> All Courses</NavLink></li>
     
   <li><NavLink to='/addCourse' className={({ isActive }) => isActive ? 'bg-amber-300' : ''}> Add Courses</NavLink></li>
   <li><NavLink to='/manageCourses' className={({ isActive }) => isActive ? 'bg-amber-300' : ''}> Manage Courses</NavLink></li>

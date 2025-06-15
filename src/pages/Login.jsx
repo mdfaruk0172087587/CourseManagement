@@ -4,6 +4,7 @@ import { PiEyesFill } from 'react-icons/pi';
 import UseHock from '../hock/UseHock';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -63,6 +64,9 @@ const Login = () => {
 
 
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl my-5 mx-auto">
+            <Helmet>
+                <title>Login Page</title>
+            </Helmet>
             <div className="card-body">
                 <h1 className="text-3xl text-center font-bold">Login now!</h1>
 

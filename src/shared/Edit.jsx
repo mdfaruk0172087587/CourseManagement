@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useLoaderData, useParams } from 'react-router';
 import Swal from 'sweetalert2';
 
@@ -41,6 +42,9 @@ const Edit = () => {
     }
     return (
         <div className="card bg-base-100 mx-auto my-5 w-full max-w-sm shrink-0 shadow-2xl">
+            <Helmet>
+                <title>Update Page</title>
+            </Helmet>
             <div className="card-body">
                 <h1 className="text-3xl text-center font-bold">Edit Course</h1>
 

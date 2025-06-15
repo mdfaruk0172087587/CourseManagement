@@ -1,9 +1,13 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router';
 
 const NotFound = () => {
     return (
         <div className="flex flex-col items-center justify-center h-screen bg-gray-100 px-4 text-center">
+            <Helmet>
+                <title>Not Found</title>
+            </Helmet>
             <img
                 src="https://i.ibb.co/W4bscnsz/error2.webp"
                 alt="Not Found"
