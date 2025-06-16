@@ -25,7 +25,7 @@ const Testimonials = () => {
       <h2 className="text-3xl font-bold text-center mb-6">💬 What Our Students Say</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {testimonials.map((t, idx) => (
-          <div key={idx} className="card bg-base-100 shadow-md p-5">
+          <div key={idx} className="card p-5  bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-xl hover:shadow-2xl transition-shadow duration-300">
             <div className="flex items-center gap-4 mb-3">
               <img src={t.image} alt={t.name} className="w-12 h-12 rounded-full object-cover" />
               <div>

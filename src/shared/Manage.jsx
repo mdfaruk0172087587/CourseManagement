@@ -64,15 +64,6 @@ const Manage = ({ manage , setManageCourse, manageCourse}) => {
                 </button>
             </td>
 
-
-
-
-            {/* modal */}
-
-
-
-
-
         </tr>
 
     );

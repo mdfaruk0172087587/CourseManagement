@@ -26,9 +26,7 @@ const {user} = UseHock();
            console.log(error.message)
         })
     }
-    return (
-       
-            
+    return (  
     <div className="card bg-base-100 mx-auto my-5 w-full max-w-sm shrink-0 shadow-2xl">
       <Helmet>
         <title>Add Course</title>

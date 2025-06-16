@@ -44,9 +44,6 @@ const MyEnrollCard = ({ enroll, setMyEnrollCourse, myEnrollCourse }) => {
                 
             }
         });
-
-
-
     }
 
     return (
@@ -54,19 +51,10 @@ const MyEnrollCard = ({ enroll, setMyEnrollCourse, myEnrollCourse }) => {
 
             <td className="font-semibold">{title}</td>
             <td>{description.slice(0, 50)}...</td>
-            <td className="font-semibold">{duration}</td>
+            <td className="font-semibold  hidden md:table-cell">{duration}</td>
             <td className="space-x-2">
                 <button onClick={() => handleRemove(enroll._id)} className='bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded'> Remove Enrollment</button>
             </td>
-
-
-
-
-
-
-
-
-
         </tr>
     );
 };
