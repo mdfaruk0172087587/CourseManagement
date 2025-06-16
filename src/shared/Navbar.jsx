@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router';
 import UseHock from '../hock/UseHock';
 import Swal from 'sweetalert2';
+import ThemeToggle from '../router/ThemeToggle';
 
 const Navbar = () => {
   const { user, logOut } = UseHock();
@@ -12,6 +13,7 @@ const Navbar = () => {
     
   <li><NavLink to='/addCourse' className={({ isActive }) => isActive ? 'bg-amber-300' : ''}> Add Courses</NavLink></li>
   <li><NavLink to='/manageCourses' className={({ isActive }) => isActive ? 'bg-amber-300' : ''}> Manage Courses</NavLink></li>
+  <li><NavLink to='/myEnrollCourse' className={({ isActive }) => isActive ? 'bg-amber-300' : ''}> My Enroll Courses</NavLink></li>
     
   </> 
   : 
@@ -83,9 +85,11 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
+          {/* theme */}
+          <ThemeToggle></ThemeToggle>
           {
             user ? <>
-              <img className='w-12 h-12 rounded-full' src={user.photoURL} alt="" />
+              <img className='w-12 h-12 rounded-full mx-3' src={user.photoURL} alt="" />
               <button onClick={handleLogOut} className='btn btn-primary'>Log Out</button>
             </>
               :

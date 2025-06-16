@@ -13,6 +13,7 @@ import CourseDetails from "../pages/CourseDetails";
 import ManageCourses from "../pages/ManageCourses";
 import Edit from "../shared/Edit";
 import NotFound from "../pages/NotFound ";
+import MyEnrolledCourses from "../pages/MyEnrolledCourses";
 
 export const router = createBrowserRouter([
   {
@@ -50,6 +51,12 @@ export const router = createBrowserRouter([
             <ManageCourses></ManageCourses>
           </PrivateRoute>,
          
+        },
+        {
+          path : '/myEnrollCourse',
+          element: <PrivateRoute>
+            <MyEnrolledCourses></MyEnrolledCourses>
+          </PrivateRoute>
         },
         {
           path : '/edit/:id',
