@@ -18,6 +18,7 @@ const CourseDetails = () => {
         description,
         _id,
         enrollCount,
+        seat
     } = data;
     const [updateCount, setUpdateCount] = useState(enrollCount);
     const { user } = UseHock();
@@ -38,28 +39,32 @@ const CourseDetails = () => {
         const enrollId = _id;
         const enrollPost = { email, enrollId };
 
-        const newCount = updateCount + 1;
-        axios
-            .put(`http://localhost:3000/courses/${_id}`, { enrollCount: newCount })
-            .then((res) => {
-                if (res.data.modifiedCount) {
-                    setUpdateCount(newCount);
+        if(enroll){
+            axios.delete(`http://localhost:3000/enrollments?email=${email}&enrollId=${enrollId}`)
+            .then(res => {
+                if(res.data.deletedCount){
+                    setEnroll(false);
+                    setUpdateCount(updateCount - 1);
+                     Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'You have successfully unenrolled!',
+                        showConfirmButton: false,
+                        timer: 1500,
+                    });
+                     axios.put(`http://localhost:3000/courses/${_id}`, { enrollCount: updateCount - 1 });
                 }
             })
-            .catch((error) => {
-                Swal.fire({
-                    position: 'top-end',
-                    icon: 'error',
-                    title: error.message,
-                    showConfirmButton: false,
-                    timer: 1500,
-                });
-            });
+        }
 
-        axios
+       else{
+        const newCount = updateCount +1;
+         axios
             .post('http://localhost:3000/enrollments', enrollPost)
             .then((res) => {
                 if (res.data.insertedId) {
+                    setEnroll(true);
+                    setUpdateCount(newCount)
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
@@ -67,7 +72,7 @@ const CourseDetails = () => {
                         showConfirmButton: false,
                         timer: 1500,
                     });
-                    setEnroll(true);
+                    axios.put(`http://localhost:3000/courses/${_id}`, { enrollCount: newCount });
                 }
             })
             .catch((error) => {
@@ -79,6 +84,7 @@ const CourseDetails = () => {
                     timer: 1500,
                 });
             });
+       }
     };
 
     return (
@@ -86,7 +92,6 @@ const CourseDetails = () => {
             <Helmet>
                 <title>Course Details</title>
             </Helmet>
-
             <img
                 src={image}
                 alt={title}
@@ -106,32 +111,43 @@ const CourseDetails = () => {
                 <p><strong>Published on:</strong> {new Date(createdAt).toLocaleDateString()}</p>
                 <p><strong>Enrolled:</strong> {updateCount} students</p>
             </div>
-
-            <div className="flex justify-start">
-                {user ? (
-                    <button
-  onClick={handleEnroll}
-  disabled={enroll}
-  className={`btn btn-primary transition-colors duration-300 ${
-    enroll
-      ? 'btn-disabled bg-gray-400 cursor-not-allowed text-white dark:bg-gray-600 dark:text-white'
-      : 'text-white dark:text-white'
-  }`}
->
-  {enroll ? 'Enrolled' : 'Enroll Now'}
-</button>
-
-
-                ) : (
-                    <button
-  disabled
-  className="btn btn-primary bg-gray-400 dark:bg-gray-700 text-white dark:text-white cursor-not-allowed"
->
-  Please log in to enroll
-</button>
-
-
-                )}
+            <div>
+                {
+                    seat > 0 ?
+                        <>
+                            <div className="flex justify-start">
+                                {user ? (
+                                    <button
+                                        onClick={handleEnroll}
+                                        className={`btn btn-primary transition-colors duration-300 ${enroll
+                                            ? 'text-white dark:text-white'
+                                            : 'text-white dark:text-white'
+                                            }`}
+                                    >
+                                        {enroll ? 'Unenroll' : 'Enroll Now'}
+                                    </button>
+                                ) : (
+                                    <button
+                                        disabled
+                                        className="btn btn-primary bg-gray-400 dark:bg-gray-700 text-white dark:text-white cursor-not-allowed"
+                                    >
+                                        Please log in to enroll
+                                    </button>
+                                )}
+                            </div>
+                        </>
+                        :
+                        <>
+                            <h1 className='text-2xl'>No seats left</h1>
+                        </>
+                }
+            </div>
+            <div>
+                {
+                    seat > 0 && <>
+                        <h1 className='text-2xl'>Seats Left : {seat}</h1>
+                    </>
+                }
             </div>
         </div>
     );

@@ -21,16 +21,19 @@ const AuthProvider = ({ children }) => {
 
     // logout
     const logOut = () => {
+        setLoading(true)
         return signOut(auth)
     }
 
     // login
     const login = (email, password) =>{
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
 
     // googleLogin
     const googleLogin = () =>{
+        setLoading(true)
         return signInWithPopup(auth, googleProvider)
     }
     useEffect(() => {

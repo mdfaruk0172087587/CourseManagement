@@ -12,7 +12,7 @@ const {user} = UseHock();
         const form = e.target;
         const formData = new FormData(form);
         const Data = Object.fromEntries(formData.entries())
-        const newPost = {...Data, instructorName: user?.displayName, instructorEmail: user?.email,  createdAt: new Date().toISOString()}
+        const newPost = {...Data, instructorName: user?.displayName, instructorEmail: user?.email,   createdAt: new Date().toISOString()}
         console.log(newPost)
         
         // post
