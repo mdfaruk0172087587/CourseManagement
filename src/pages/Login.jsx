@@ -5,6 +5,8 @@ import UseHock from '../hock/UseHock';
 import Swal from 'sweetalert2';
 import { useLocation, useNavigate } from 'react-router';
 import { Helmet } from 'react-helmet-async';
+import Lottie from 'lottie-react';
+import loginLottie from '../assets/loginLottie.json';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -61,6 +63,11 @@ const Login = () => {
   };
 
   return (
+    <div className="hero bg-base-200 min-h-screen">
+  <div className="hero-content flex-col lg:flex-row-reverse">
+    <div className="text-center lg:text-left">
+     <Lottie style={{width: '250px'}} animationData={loginLottie} loop={true}></Lottie>
+    </div>
     <div className="card w-full max-w-sm mx-auto shadow-2xl my-5 
       bg-white dark:bg-gray-800 
       text-gray-900 dark:text-gray-100
@@ -105,7 +112,7 @@ const Login = () => {
           <button 
             type="button" 
             onClick={() => setShowPassword(!showPassword)} 
-            className="absolute right-4 top-[130px] z-10 text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
+            className="absolute right-4 bottom-20 z-10 text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
             aria-label={showPassword ? "Hide password" : "Show password"}
           >
             {showPassword ? <PiEyesFill size={23} /> : <LiaEyeSlash size={23} />}
@@ -143,6 +150,8 @@ const Login = () => {
           Login with Google
         </button>
       </div>
+    </div>
+    </div>
     </div>
   );
 };

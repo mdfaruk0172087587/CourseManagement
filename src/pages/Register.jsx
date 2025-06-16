@@ -2,6 +2,8 @@ import Swal from 'sweetalert2';
 import UseHock from '../hock/UseHock';
 import { useNavigate } from 'react-router';
 import { Helmet } from 'react-helmet-async';
+import Lottie from 'lottie-react';
+import registerLottie from '../assets/register.json'
 
 const Register = () => {
   const { register, userUpdateProfile, setUser } = UseHock();
@@ -86,6 +88,11 @@ const Register = () => {
   };
 
   return (
+    <div className="hero bg-base-200 min-h-screen">
+  <div className="hero-content flex-col lg:flex-row-reverse">
+    <div className="text-center lg:text-left">
+     <Lottie style={{width: '250px'}} animationData={registerLottie} loop={true}></Lottie>
+    </div>
     <div className="card bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 w-full max-w-sm flex justify-center shrink-0 shadow-2xl my-5 mx-auto transition-colors duration-300">
       <Helmet>
         <title>Register Page</title>
@@ -138,6 +145,8 @@ const Register = () => {
           </button>
         </form>
       </div>
+    </div>
+    </div>
     </div>
   );
 };

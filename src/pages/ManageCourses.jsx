@@ -6,10 +6,10 @@ import { Helmet } from 'react-helmet-async';
 const ManageCourses = () => {
   const { user } = UseHock();
   const [manageCourse, setManageCourse] = useState([]);
-
+console.log(user.email)
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/manageCourses?email=${user.email}`)
+      fetch(`http://localhost:3000/manageCourses?instructorEmail=${user.email}`)
         .then((res) => res.json())
         .then((data) => setManageCourse(data));
     }
