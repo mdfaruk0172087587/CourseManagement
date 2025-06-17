@@ -22,6 +22,7 @@ export const router = createBrowserRouter([
     errorElement: <NotFound></NotFound>,
     children: [
       {
+        index: true,
         path: '/',
         element: <Home></Home>,
         loader: () => fetch('https://assignment-11-server-theta-ecru.vercel.app/courses'),

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Slider from 'react-slick';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

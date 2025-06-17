@@ -4,7 +4,7 @@ import Modal from './Modal';
 const Footer = () => {
   return (
     <footer className="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 px-6 py-10 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* Logo & Slogan */}
         <div className="flex flex-col items-start space-y-3">
           <h2 className="text-2xl font-bold flex items-center gap-3">
@@ -54,7 +54,7 @@ const Footer = () => {
           <h4 className="text-lg font-semibold mb-4">Explore</h4>
           <ul className="space-y-3 text-gray-700 dark:text-gray-400 text-sm">
             <li>
-              <button
+              <button className='hover:underline'
                 onClick={() => document.getElementById('course_modal').showModal()}
                 type="button"
               >
@@ -62,7 +62,7 @@ const Footer = () => {
               </button>
             </li>
             <li>
-              <button
+              <button className='hover:underline'
                 onClick={() => document.getElementById('about_modal').showModal()}
                 type="button"
               >
@@ -70,7 +70,7 @@ const Footer = () => {
               </button>
             </li>
             <li>
-              <button
+              <button className='hover:underline'
                 onClick={() => document.getElementById('blog_modal').showModal()}
                 type="button"
               >
@@ -84,7 +84,7 @@ const Footer = () => {
           <h4 className="text-lg font-semibold mb-4">Support</h4>
           <ul className="space-y-3 text-gray-700 dark:text-gray-400 text-sm">
             <li>
-              <button
+              <button className='hover:underline'
                 onClick={() => document.getElementById('help_modal').showModal()}
                 type="button"
               >
@@ -92,7 +92,7 @@ const Footer = () => {
               </button>
             </li>
             <li>
-              <button
+              <button className='hover:underline'
                 onClick={() => document.getElementById('privacy_modal').showModal()}
                 type="button"
               >
@@ -100,7 +100,7 @@ const Footer = () => {
               </button>
             </li>
             <li>
-              <button
+              <button className='hover:underline'
                 onClick={() => document.getElementById('terms_modal').showModal()}
                 type="button"
               >
