@@ -18,7 +18,6 @@ const testimonials = [
     rating: 4.9,
   },
 ];
-
 const Testimonials = () => {
   return (
     <section className="my-10 px-4 md:px-10">

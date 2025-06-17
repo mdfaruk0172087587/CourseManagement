@@ -3,10 +3,8 @@ import { Link, NavLink } from 'react-router';
 import UseHock from '../hock/UseHock';
 import Swal from 'sweetalert2';
 import ThemeToggle from '../router/ThemeToggle';
-
 const Navbar = () => {
   const { user, logOut } = UseHock();
-
   const Links = user ? (
     <>
       <li>
@@ -34,6 +32,11 @@ const Navbar = () => {
           My Enroll Courses
         </NavLink>
       </li>
+      <li>
+        <NavLink to='/about' className={({ isActive }) => (isActive ? 'bg-amber-300' : '')}>
+          About
+        </NavLink>
+      </li>
     </>
   ) : (
     <>
@@ -44,12 +47,16 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink to='/courses' className={({ isActive }) => (isActive ? 'bg-amber-300' : '')}>
-          Courses
+          All Courses
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to='/about' className={({ isActive }) => (isActive ? 'bg-amber-300' : '')}>
+          About
         </NavLink>
       </li>
     </>
   );
-
   const handleLogOut = () => {
     Swal.fire({
       title: 'Are you sure?',
@@ -83,7 +90,6 @@ const Navbar = () => {
       }
     });
   };
-
   return (
     <div className="navbar bg-white dark:bg-gray-900 shadow-sm px-5 md:px-10">
       <div className="navbar-start flex items-center">
@@ -111,30 +117,24 @@ const Navbar = () => {
             {Links}
           </ul>
         </div>
-
         {/* Logo and Project Name - medium+ screens */}
+        <Link to='/' className="flex md:hidden items-center space-x-2 ml-2">
+          <img src="/project-logo.png" alt="Logo" className="w-8 h-8" />
+        </Link>
         <Link to='/' className="hidden md:flex items-center space-x-3 ml-2">
-          <img
-            src="/project-logo.png"
-            alt="Logo"
-            className="w-10 h-10 object-contain"
-            loading="lazy"
-          />
+          <img src="/project-logo.png" alt="Logo" className="w-10 h-10" />
           <span className="text-xl font-bold text-blue-600 dark:text-blue-400">
             Course Management
           </span>
         </Link>
       </div>
-
       {/* Links - large screens */}
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 text-gray-900 dark:text-gray-100">{Links}</ul>
       </div>
-
       <div className="navbar-end flex items-center space-x-3">
         {/* Theme toggle */}
         <ThemeToggle />
-
         {user ? (
           <>
             <img
@@ -150,22 +150,24 @@ const Navbar = () => {
               Log Out
             </button>
           </>
-        ) : (
-          <>
-            <Link
-              to="/login"
-              className="btn btn-primary bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
-            >
-              Login
-            </Link>
-            <Link
-              to="/register"
-              className="btn btn-primary ml-2 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
-            >
-              Register
-            </Link>
-          </>
-        )}
+        )
+          :
+          (
+            <>
+              <Link
+                to="/login"
+                className="btn btn-primary bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
+              >
+                Login
+              </Link>
+              <Link
+                to="/register"
+                className="btn btn-primary ml-2 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
+              >
+                Register
+              </Link>
+            </>
+          )}
       </div>
     </div>
   );

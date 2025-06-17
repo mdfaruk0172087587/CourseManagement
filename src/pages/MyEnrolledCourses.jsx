@@ -2,11 +2,10 @@ import React, { useEffect, useState } from 'react';
 import UseHock from '../hock/UseHock';
 import { Helmet } from 'react-helmet-async';
 import MyEnrollCard from '../shared/MyEnrollCard';
-
+import { Link } from 'react-router';
 const MyEnrolledCourses = () => {
   const { user } = UseHock();
   const [myEnrollCourse, setMyEnrollCourse] = useState([]);
-console.log(user.accessToken)
   useEffect(() => {
     if (user?.email) {
       fetch(`https://assignment-11-server-theta-ecru.vercel.app/myEnrolledCourses?email=${user.email}`, {
@@ -18,9 +17,8 @@ console.log(user.accessToken)
         .then((data) => setMyEnrollCourse(data));
     }
   }, [user]);
-
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300 rounded-md shadow-md">
+    <div className="max-w-6xl mx-auto px-4 py-8 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300 rounded-md shadow-md my-10">
       <Helmet>
         <title>My Enroll Course</title>
       </Helmet>
@@ -57,8 +55,8 @@ console.log(user.accessToken)
           </tbody>
         </table>
       </div>
+      <Link to='/' className='px-4 py-2 btn rounded-md bg-gray-400 dark:bg-gray-700 text-gray-800 dark:text-gray-200 mt-3 block lg:hidden'>Back To Home</Link>
     </div>
   );
 };
-
 export default MyEnrolledCourses;

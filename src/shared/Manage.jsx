@@ -2,13 +2,10 @@ import axios from 'axios';
 import React from 'react';
 import { Link } from 'react-router';
 import Swal from 'sweetalert2';
-
 const Manage = ({ manage , setManageCourse, manageCourse}) => {
     const { title, description, _id } = manage;
-
     // handleDelate
     const handleDelate = (_id) => {
-
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -18,9 +15,7 @@ const Manage = ({ manage , setManageCourse, manageCourse}) => {
             cancelButtonColor: "#d33",
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
-
             if (result.isConfirmed) {
-
                 // delate
                 axios.delete(`https://assignment-11-server-theta-ecru.vercel.app/courses/${_id}`)
                     .then(res => {
@@ -33,7 +28,6 @@ const Manage = ({ manage , setManageCourse, manageCourse}) => {
                                 text: "Your file has been deleted.",
                                 icon: "success"
                             });
-
                         }
                     })
                     .catch(error => {
@@ -45,14 +39,11 @@ const Manage = ({ manage , setManageCourse, manageCourse}) => {
                             timer: 1500
                         });
                     })
-
-
             }
         });
     }
     return (
         <tr >
-
             <td className="font-semibold">{title}</td>
             <td>{description.slice(0, 50)}...</td>
             <td className="space-x-2">
@@ -63,10 +54,7 @@ const Manage = ({ manage , setManageCourse, manageCourse}) => {
                     Delete
                 </button>
             </td>
-
         </tr>
-
     );
 };
-
 export default Manage;

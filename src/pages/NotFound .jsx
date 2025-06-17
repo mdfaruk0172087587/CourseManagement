@@ -1,7 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router';
-
 const NotFound = () => {
     return (
         <div className="flex flex-col items-center justify-center h-screen bg-gray-100 px-4 text-center">
@@ -27,5 +26,4 @@ const NotFound = () => {
         </div>
     );
 };
-
 export default NotFound;

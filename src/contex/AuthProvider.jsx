@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { AuthContext } from './AuthContex';
-import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { auth } from '../firebase/firebase.confige';
-
 const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -12,29 +12,30 @@ const AuthProvider = ({ children }) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     };
-
     // update profile
     const userUpdateProfile = (userUpdate) => {
         setLoading(true)
         return updateProfile(auth.currentUser, userUpdate)
     }
-
     // logout
     const logOut = () => {
         setLoading(true)
         return signOut(auth)
     }
-
     // login
-    const login = (email, password) =>{
+    const login = (email, password) => {
         setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
-
     // googleLogin
-    const googleLogin = () =>{
+    const googleLogin = () => {
         setLoading(true)
         return signInWithPopup(auth, googleProvider)
+    }
+    // github login
+    const githubLogin = () => {
+        setLoading(true)
+        return signInWithPopup(auth, githubProvider);
     }
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -55,7 +56,7 @@ const AuthProvider = ({ children }) => {
         login,
         googleLogin,
         setLoading,
-        
+        githubLogin
     }
     return (
         <AuthContext value={userInfo}>
@@ -63,5 +64,4 @@ const AuthProvider = ({ children }) => {
         </AuthContext>
     );
 };
-
 export default AuthProvider;

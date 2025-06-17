@@ -17,9 +17,7 @@ const Modal = () => {
                             Join our growing community and unlock access to <span className="font-semibold">industry-relevant content</span>,
                             real-time course updates, and a supportive learning environment.
                         </p>
-
                     </div>
-
                     <div className="modal-action">
                         <form method="dialog">
                             <button className="btn bg-base-300 dark:bg-gray-700 dark:text-gray-200 border-none">
@@ -36,7 +34,6 @@ const Modal = () => {
                         <h1 className="text-4xl font-extrabold mb-8 text-center text-gray-900 dark:text-gray-100">
                             About Course Management
                         </h1>
-
                         <div className="space-y-8 text-gray-800 dark:text-gray-300 leading-relaxed text-lg">
                             {/* Mission */}
                             <div>
@@ -47,7 +44,6 @@ const Modal = () => {
                                     can explore, enroll, and track their educational journey with ease.
                                 </p>
                             </div>
-
                             {/* Vision */}
                             <div>
                                 <h2 className="text-2xl font-bold mb-3 text-indigo-700 dark:text-indigo-400">Our Vision</h2>
@@ -56,7 +52,6 @@ const Modal = () => {
                                     promoting lifelong learning and professional growth through technology.
                                 </p>
                             </div>
-
                             {/* Features */}
                             <div>
                                 <h2 className="text-2xl font-bold mb-3 text-indigo-700 dark:text-indigo-400">Key Features</h2>
@@ -68,7 +63,6 @@ const Modal = () => {
                                     <li>Dark mode support and mobile-friendly design</li>
                                 </ul>
                             </div>
-
                             {/* Our Team */}
                             <div>
                                 <h2 className="text-2xl font-bold mb-3 text-indigo-700 dark:text-indigo-400">Our Team</h2>
@@ -77,7 +71,6 @@ const Modal = () => {
                                     improving access to quality education through a streamlined course management system.
                                 </p>
                             </div>
-
                             {/* Why Choose Us */}
                             <div>
                                 <h2 className="text-2xl font-bold mb-3 text-indigo-700 dark:text-indigo-400">Why Choose Course Management?</h2>
@@ -89,7 +82,6 @@ const Modal = () => {
                             </div>
                         </div>
                     </section>
-
                     <div className="modal-action">
                         <form method="dialog">
                             <button className="btn bg-base-300 dark:bg-gray-700 dark:text-gray-200 border-none">
@@ -102,16 +94,13 @@ const Modal = () => {
             {/* modal blog */}
             <dialog id="blog_modal" className="modal">
                 <div className="modal-box bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100">
-
                     <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-900 rounded-lg shadow-lg">
                         <h2 className="text-4xl font-bold text-center text-blue-600 dark:text-blue-400 mb-6">
                             🚀 Course Management: শেখার যাত্রায় একটি নতুন অধ্যায়!
                         </h2>
-
                         <p className="text-lg text-center mb-10">
                             Course Management হলো এমন একটি ওয়েব অ্যাপ্লিকেশন যা শিক্ষার্থী এবং শিক্ষকদের শেখা ও শেখানোর যাত্রাকে করে তোলে আরও সহজ, কার্যকরী এবং আনন্দদায়ক।
                         </p>
-
                         <div className="space-y-8">
                             <div>
                                 <h3 className="text-2xl font-semibold text-indigo-600 dark:text-indigo-400 mb-2">
@@ -125,7 +114,6 @@ const Modal = () => {
                                     <li><strong>📱 রেসপন্সিভ ডিজাইন:</strong> মোবাইল, ট্যাব ও ডেস্কটপে চমৎকারভাবে কাজ করে।</li>
                                 </ul>
                             </div>
-
                             <div>
                                 <h3 className="text-2xl font-semibold text-indigo-600 dark:text-indigo-400 mb-2">
                                     👥 কে উপকার পাবে?
@@ -136,7 +124,6 @@ const Modal = () => {
                                     <li>🏢 প্রতিষ্ঠান – ট্রেনিং বা কোর্স ম্যানেজমেন্ট করতে চাইলে পারফেক্ট সলিউশন।</li>
                                 </ul>
                             </div>
-
                             <div>
                                 <h3 className="text-2xl font-semibold text-indigo-600 dark:text-indigo-400 mb-2">
                                     💬 ব্যবহারকারীদের মতামত:
@@ -147,16 +134,13 @@ const Modal = () => {
                                     — রাফি, Web Instructor
                                 </blockquote>
                             </div>
-
                             <div className="text-center mt-10">
                                 <p className="text-lg font-semibold mb-4">
                                     🎯 শেখা হোক আরও স্মার্ট, আরও সিস্টেমেটিক — <span className="text-blue-600 dark:text-blue-400">Course Management</span> এর সাথে!
                                 </p>
-
                             </div>
                         </div>
                     </section>
-
                     <div className="modal-action">
                         <form method="dialog">
                             <button className="btn bg-base-300 dark:bg-gray-700 dark:text-gray-200 border-none">
@@ -173,7 +157,6 @@ const Modal = () => {
                         <h1 className="text-3xl font-bold mb-6 text-center">
                             Course Management - Privacy Policy
                         </h1>
-
                         <div className="space-y-5 max-h-80 overflow-y-auto text-gray-700 dark:text-gray-300 text-justify leading-relaxed px-2">
                             <p>
                                 <span className="text-xl font-bold">1. Information Collection: </span>
@@ -197,7 +180,6 @@ const Modal = () => {
                             </p>
                         </div>
                     </div>
-
                     <div className="modal-action">
                         <form method="dialog">
                             <button className="btn bg-base-300 dark:bg-gray-700 dark:text-gray-200 border-none">
@@ -214,7 +196,6 @@ const Modal = () => {
                         <h1 className="text-3xl font-bold mb-6 text-center">
                             Course Management - Terms and Conditions
                         </h1>
-
                         <div className="space-y-5 max-h-80 overflow-y-auto text-gray-700 dark:text-gray-300 text-justify leading-relaxed px-2">
                             <p>
                                 <span className="text-xl font-bold">1. User Eligibility: </span>
@@ -242,7 +223,6 @@ const Modal = () => {
                             </p>
                         </div>
                     </div>
-
                     <div className="modal-action">
                         <form method="dialog">
                             <button className="btn bg-base-300 dark:bg-gray-700 dark:text-gray-200 border-none">
@@ -259,7 +239,6 @@ const Modal = () => {
                         <h1 className="text-3xl font-bold mb-6 text-center">
                             Course Management - Help Center
                         </h1>
-
                         <div className="space-y-5 max-h-80 overflow-y-auto text-gray-700 dark:text-gray-300 text-justify leading-relaxed px-2">
                             <p>
                                 <span className="text-xl font-bold">1. How to Enroll in a Course? </span>
@@ -287,7 +266,6 @@ const Modal = () => {
                             </p>
                         </div>
                     </div>
-
                     <div className="modal-action">
                         <form method="dialog">
                             <button className="btn bg-base-300 dark:bg-gray-700 dark:text-gray-200 border-none">

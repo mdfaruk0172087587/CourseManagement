@@ -20,7 +20,6 @@ const instructors = [
     rating: 4.7,
   },
 ];
-
 const TopInstructors = () => {
   return (
     <section className="my-10 px-4 md:px-10 ">

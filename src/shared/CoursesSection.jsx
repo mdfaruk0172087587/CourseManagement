@@ -1,6 +1,5 @@
 import React from 'react';
 import Courses from './Courses';
-
 const CoursesSection = ({ data }) => {
   return (
     <div className="max-w-7xl mx-auto px-4 py-10">
@@ -9,11 +8,10 @@ const CoursesSection = ({ data }) => {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {
-            data.map(course => <Courses key={course._id} course={course}></Courses>)
+          data.map(course => <Courses key={course._id} course={course}></Courses>)
         }
       </div>
     </div>
   );
 };
-
 export default CoursesSection;

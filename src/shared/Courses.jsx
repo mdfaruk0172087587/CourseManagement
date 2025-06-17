@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
-
 const Courses = ({ course }) => {
   const { image, title, instructorName, duration, _id, createdAt } = course;
-
   return (
     <div className="card bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-xl hover:shadow-2xl transition-shadow duration-300">
       <figure>
@@ -35,5 +33,4 @@ const Courses = ({ course }) => {
     </div>
   );
 };
-
 export default Courses;

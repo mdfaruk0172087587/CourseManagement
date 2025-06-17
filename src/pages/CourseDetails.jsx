@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router';
+import { Link, useLoaderData } from 'react-router';
 import UseHock from '../hock/UseHock';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { Helmet } from 'react-helmet-async';
-
 const CourseDetails = () => {
     const [enroll, setEnroll] = useState(false);
     const [userEnrollments, setUserEnrollments] = useState([]);
@@ -21,11 +20,9 @@ const CourseDetails = () => {
         enrollCount,
         seat
     } = data;
-
     const [updateCount, setUpdateCount] = useState(enrollCount);
     const { user } = UseHock();
     const seatsLeft = seat - updateCount;
-
     // Fetch user's enrollment data
     useEffect(() => {
         if (user?.email) {
@@ -37,12 +34,10 @@ const CourseDetails = () => {
                 });
         }
     }, [user, _id]);
-
     const handleEnroll = async () => {
         const email = user.email;
         const enrollId = _id;
         const enrollPost = { email, enrollId };
-
         if (enroll) {
             // Unenroll Logic
             axios.delete(`https://assignment-11-server-theta-ecru.vercel.app/enrollments?email=${email}&enrollId=${enrollId}`)
@@ -67,24 +62,22 @@ const CourseDetails = () => {
                 Swal.fire({
                     position: 'top-end',
                     icon: 'warning',
-                    title: 'আপনি একসাথে সর্বোচ্চ ৩টি কোর্সে এনরোল করতে পারবেন।',
+                    title: 'You can enroll in a maximum of 3 courses at the same time.',
                     showConfirmButton: false,
                     timer: 2000,
                 });
                 return;
             }
-
             if (seatsLeft <= 0) {
                 Swal.fire({
                     position: 'top-end',
                     icon: 'warning',
-                    title: 'দুঃখিত! এই কোর্সে আর কোনো সিট নেই।',
+                    title: 'Sorry! There are no seats left in this course',
                     showConfirmButton: false,
                     timer: 2000,
                 });
                 return;
             }
-
             // Proceed to enroll
             const newCount = updateCount + 1;
             axios.post('https://assignment-11-server-theta-ecru.vercel.app/enrollments', enrollPost)
@@ -96,7 +89,7 @@ const CourseDetails = () => {
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
-                            title: 'আপনি সফলভাবে এনরোল করেছেন!',
+                            title: 'You have successfully enrolled!',
                             showConfirmButton: false,
                             timer: 1500,
                         });
@@ -114,25 +107,20 @@ const CourseDetails = () => {
                 });
         }
     };
-
     return (
-        <div className="max-w-4xl mx-auto p-4 sm:p-6 md:p-10 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 rounded-xl shadow-md mt-10 transition-colors duration-300">
+        <div className="max-w-4xl mx-auto p-4 sm:p-6 md:p-10 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 rounded-xl shadow-md mt-10 transition-colors duration-300 mb-5">
             <Helmet>
                 <title>Course Details</title>
             </Helmet>
-
             <img
                 src={image}
                 alt={title}
                 className="w-full h-60 sm:h-72 md:h-80 object-cover rounded-lg"
             />
-
             <h1 className="text-2xl sm:text-3xl font-bold mt-6 mb-3">{title}</h1>
-
             <p className="text-gray-600 dark:text-gray-300 mb-6 text-sm sm:text-base leading-relaxed">
                 {description}
             </p>
-
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-700 dark:text-gray-200 text-sm sm:text-base mb-6">
                 <p><strong>Duration:</strong> {duration}</p>
                 <p><strong>Instructor:</strong> {instructorName}</p>
@@ -140,7 +128,6 @@ const CourseDetails = () => {
                 <p><strong>Published on:</strong> {new Date(createdAt).toLocaleDateString()}</p>
                 <p><strong>Enrolled:</strong> {updateCount} students</p>
             </div>
-
             <div>
                 {
                     seatsLeft > 0 ? (
@@ -154,11 +141,11 @@ const CourseDetails = () => {
                                 </button>
                             ) : (
                                 <button
-  disabled
-  className="px-4 py-2 rounded-md bg-gray-400 dark:bg-gray-700 text-gray-800 dark:text-gray-200 cursor-not-allowed"
->
-  Please log in to enroll
-</button>
+                                    disabled
+                                    className="px-4 py-2 rounded-md bg-gray-400 dark:bg-gray-700 text-gray-800 dark:text-gray-200 cursor-not-allowed"
+                                >
+                                    Please log in to enroll
+                                </button>
 
                             )}
                         </div>
@@ -167,14 +154,13 @@ const CourseDetails = () => {
                     )
                 }
             </div>
-
             <div>
                 <h1 className='text-2xl mt-3'>
                     Seats Left : {seatsLeft >= 0 ? seatsLeft : 0}
                 </h1>
             </div>
+            <Link to='/' className='px-4 py-2 btn rounded-md bg-gray-400 dark:bg-gray-700 text-gray-800 dark:text-gray-200 mt-3 block lg:hidden'>Back To Home</Link>
         </div>
     );
 };
-
 export default CourseDetails;

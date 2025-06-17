@@ -19,16 +19,16 @@ const MyEnrollCard = ({ enroll, setMyEnrollCourse, myEnrollCourse }) => {
             if (result.isConfirmed) {
                 axios.delete(`https://assignment-11-server-theta-ecru.vercel.app/enrollments/${id}`)
                     .then(res => {
-                       if(res.data.deletedCount){
+                        if (res.data.deletedCount) {
 
-                        const filterData = myEnrollCourse.filter(item => item._id !== id);
-                        setMyEnrollCourse(filterData)
-                        Swal.fire({
-                    title: "Deleted!",
-                    text: "Your file has been deleted.",
-                    icon: "success"
-                });
-                       }
+                            const filterData = myEnrollCourse.filter(item => item._id !== id);
+                            setMyEnrollCourse(filterData)
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                            });
+                        }
                     })
                     .catch(error => {
                         Swal.fire({
@@ -38,10 +38,8 @@ const MyEnrollCard = ({ enroll, setMyEnrollCourse, myEnrollCourse }) => {
                             showConfirmButton: false,
                             timer: 1500
                         });
+
                     })
-
-
-                
             }
         });
     }
