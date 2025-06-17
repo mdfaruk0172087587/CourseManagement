@@ -22,7 +22,7 @@ const Manage = ({ manage , setManageCourse, manageCourse}) => {
             if (result.isConfirmed) {
 
                 // delate
-                axios.delete(`http://localhost:3000/courses/${_id}`)
+                axios.delete(`https://assignment-11-server-theta-ecru.vercel.app/courses/${_id}`)
                     .then(res => {
                         // delate success
                         if (res.data.deletedCount) {

@@ -4,11 +4,15 @@ import { useNavigate } from 'react-router';
 import { Helmet } from 'react-helmet-async';
 import Lottie from 'lottie-react';
 import registerLottie from '../assets/register.json'
+import { useState } from 'react';
+import { PiEyesFill } from 'react-icons/pi';
+import { LiaEyeSlash } from 'react-icons/lia';
 
 const Register = () => {
-  const { register, userUpdateProfile, setUser } = UseHock();
+  const { register, userUpdateProfile, setUser, setLoading } = UseHock();
   const navigate = useNavigate();
-
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -74,6 +78,7 @@ const Register = () => {
           showConfirmButton: false,
           timer: 1500,
         });
+        setLoading(false)
         navigate('/');
       })
       .catch((error) => {
@@ -86,7 +91,6 @@ const Register = () => {
         });
       });
   };
-
   return (
     <div className="hero bg-base-200 min-h-screen">
   <div className="hero-content flex-col lg:flex-row-reverse">
@@ -126,20 +130,36 @@ const Register = () => {
 
           <label className="label">Password</label>
           <input
-            type="password"
+            type= {showPassword ? 'text' : 'password'}
             name="password"
             required
             className="input bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100"
             placeholder="Password"
           />
+          <button
+           type='button'
+            className="absolute right-8 lg:right-12 bottom-42 z-10 text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
+            onClick={() => setShowPassword(!showPassword)}>
+               {
+                showPassword ?  <PiEyesFill size={23} /> : <LiaEyeSlash size={23}></LiaEyeSlash>
+               }
+                </button>
           <label className="label">Confirm Password</label>
           <input
-            type="password"
+            type={showConfirmPassword ? 'text' : 'password'}
             name="confirmPassword"
             required
             className="input bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100"
             placeholder="Confirm Password"
           />
+          <button
+           type='button'
+            className="absolute right-8 lg:right-12 bottom-25 z-10 text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
+            onClick={() => setShowConfirmPassword(!showConfirmPassword)}>
+               {
+                showConfirmPassword ?  <PiEyesFill size={23} /> : <LiaEyeSlash size={23}></LiaEyeSlash>
+               }
+                </button>
           <button type="submit" className="btn btn-neutral mt-4">
             Register
           </button>

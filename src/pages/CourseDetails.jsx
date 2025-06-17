@@ -29,7 +29,7 @@ const CourseDetails = () => {
     // Fetch user's enrollment data
     useEffect(() => {
         if (user?.email) {
-            axios.get(`http://localhost:3000/enrollments?email=${user.email}`)
+            axios.get(`https://assignment-11-server-theta-ecru.vercel.app/enrollments?email=${user.email}`)
                 .then((res) => {
                     setUserEnrollments(res.data);
                     const found = res.data.find(item => item.enrollId === _id);
@@ -45,7 +45,7 @@ const CourseDetails = () => {
 
         if (enroll) {
             // Unenroll Logic
-            axios.delete(`http://localhost:3000/enrollments?email=${email}&enrollId=${enrollId}`)
+            axios.delete(`https://assignment-11-server-theta-ecru.vercel.app/enrollments?email=${email}&enrollId=${enrollId}`)
                 .then(res => {
                     if (res.data.deletedCount) {
                         setEnroll(false);
@@ -57,7 +57,7 @@ const CourseDetails = () => {
                             showConfirmButton: false,
                             timer: 1500,
                         });
-                        axios.put(`http://localhost:3000/courses/${_id}`, { enrollCount: updateCount - 1 });
+                        axios.put(`https://assignment-11-server-theta-ecru.vercel.app/courses/${_id}`, { enrollCount: updateCount - 1 });
                         setUserEnrollments(userEnrollments.filter(item => item.enrollId !== enrollId));
                     }
                 });
@@ -87,7 +87,7 @@ const CourseDetails = () => {
 
             // Proceed to enroll
             const newCount = updateCount + 1;
-            axios.post('http://localhost:3000/enrollments', enrollPost)
+            axios.post('https://assignment-11-server-theta-ecru.vercel.app/enrollments', enrollPost)
                 .then((res) => {
                     if (res.data.insertedId) {
                         setEnroll(true);
@@ -100,7 +100,7 @@ const CourseDetails = () => {
                             showConfirmButton: false,
                             timer: 1500,
                         });
-                        axios.put(`http://localhost:3000/courses/${_id}`, { enrollCount: newCount });
+                        axios.put(`https://assignment-11-server-theta-ecru.vercel.app/courses/${_id}`, { enrollCount: newCount });
                     }
                 })
                 .catch((error) => {

@@ -6,10 +6,14 @@ import MyEnrollCard from '../shared/MyEnrollCard';
 const MyEnrolledCourses = () => {
   const { user } = UseHock();
   const [myEnrollCourse, setMyEnrollCourse] = useState([]);
-
+console.log(user.accessToken)
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/myEnrolledCourses?email=${user.email}`)
+      fetch(`https://assignment-11-server-theta-ecru.vercel.app/myEnrolledCourses?email=${user.email}`, {
+        headers: {
+          authorization: `Bearer ${user?.accessToken}`
+        }
+      })
         .then((res) => res.json())
         .then((data) => setMyEnrollCourse(data));
     }

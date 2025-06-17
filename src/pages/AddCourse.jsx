@@ -16,7 +16,7 @@ const {user} = UseHock();
         console.log(newPost)
         
         // post
-        axios.post('http://localhost:3000/courses', newPost)
+        axios.post('https://assignment-11-server-theta-ecru.vercel.app/courses', newPost)
         .then(res =>{
             if(res.data.insertedId){
                 alert('your post successfully')

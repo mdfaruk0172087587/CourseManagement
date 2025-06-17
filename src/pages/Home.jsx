@@ -9,7 +9,7 @@ import Loading from '../shared/Loading';
 
 const Home = () => {
     const data = useLoaderData();
-    const popularPromise = fetch('http://localhost:3000/popularCourses').then(res => res.json())
+    const popularPromise = fetch('https://assignment-11-server-theta-ecru.vercel.app/popularCourses').then(res => res.json())
     return (
         <div>
            
