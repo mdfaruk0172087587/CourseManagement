@@ -42,9 +42,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/courseDetails/:id',
-        element: <PrivateRoute>
-          <CourseDetails></CourseDetails>
-        </PrivateRoute>,
+        element: <CourseDetails></CourseDetails>,
         loader: ({ params }) => fetch(`http://localhost:3000/courses/${params.id}`),
         hydrateFallbackElement: <Loading></Loading>
       },

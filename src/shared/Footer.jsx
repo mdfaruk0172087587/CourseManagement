@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* Logo & Slogan */}
         <div className="flex flex-col items-start space-y-3">
-          <h2 className="text-2xl font-bold flex items-center gap-3">
+          <h2 className="text-2xl font-medium flex items-center gap-3">
             <img
               className="w-12 h-12 object-contain"
               src="/logo.jpg"

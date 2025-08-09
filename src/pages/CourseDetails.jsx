@@ -4,6 +4,7 @@ import UseHock from '../hock/UseHock';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { Helmet } from 'react-helmet-async';
+import { FaBookOpen, FaInfoCircle } from 'react-icons/fa';
 const CourseDetails = () => {
     const [enroll, setEnroll] = useState(false);
     const [userEnrollments, setUserEnrollments] = useState([]);
@@ -108,59 +109,86 @@ const CourseDetails = () => {
         }
     };
     return (
-        <div className="max-w-4xl mx-auto p-4 sm:p-6 md:p-10 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 rounded-xl shadow-md mt-10 transition-colors duration-300 mb-5">
-            <Helmet>
-                <title>Course Details</title>
-            </Helmet>
-            <img
-                src={image}
-                alt={title}
-                className="w-full h-60 sm:h-72 md:h-80 object-cover rounded-lg"
-            />
-            <h1 className="text-2xl sm:text-3xl font-bold mt-6 mb-3">{title}</h1>
-            <p className="text-gray-600 dark:text-gray-300 mb-6 text-sm sm:text-base leading-relaxed">
-                {description}
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-700 dark:text-gray-200 text-sm sm:text-base mb-6">
-                <p><strong>Duration:</strong> {duration}</p>
-                <p><strong>Instructor:</strong> {instructorName}</p>
-                <p><strong>Email:</strong> {instructorEmail}</p>
-                <p><strong>Published on:</strong> {new Date(createdAt).toLocaleDateString()}</p>
-                <p><strong>Enrolled:</strong> {updateCount} students</p>
-            </div>
-            <div>
-                {
-                    seatsLeft > 0 ? (
-                        <div className="flex justify-start">
-                            {user ? (
-                                <button
-                                    onClick={handleEnroll}
-                                    className={`btn btn-primary transition-colors duration-300 text-white dark:text-white`}
-                                >
-                                    {enroll ? 'Unenroll' : 'Enroll Now'}
-                                </button>
-                            ) : (
-                                <button
-                                    disabled
-                                    className="px-4 py-2 rounded-md bg-gray-400 dark:bg-gray-700 text-gray-800 dark:text-gray-200 cursor-not-allowed"
-                                >
-                                    Please log in to enroll
-                                </button>
+          <div className="max-w-[93%] mx-auto p-4 sm:p-6 md:p-10  dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300 mb-5">
+      <Helmet>
+        <title>Course Details</title>
+      </Helmet>
 
-                            )}
-                        </div>
-                    ) : (
-                        <h1 className='text-2xl text-red-500'>No seats left</h1>
-                    )
-                }
-            </div>
-            <div>
-                <h1 className='text-2xl mt-3'>
-                    Seats Left : {seatsLeft >= 0 ? seatsLeft : 0}
-                </h1>
-            </div>
-            <Link to='/' className='px-4 py-2 btn rounded-md bg-gray-400 dark:bg-gray-700 text-gray-800 dark:text-gray-200 mt-3 block lg:hidden'>Back To Home</Link>
+      {/* Title and Icon centered */}
+      <div className="text-center mb-3">
+        <h2 className="text-3xl md:text-4xl font-medium text-primary inline-flex items-center justify-center gap-2 mx-auto">
+          {title} <FaBookOpen className="text-indigo-600" />
+        </h2>
+        <p className="max-w-2xl mx-auto mt-2 text-gray-600 dark:text-gray-300 flex items-center justify-center gap-2 text-sm sm:text-base">
+          <FaInfoCircle className="text-blue-500" />
+          Explore this comprehensive course designed to enhance your skills with expert guidance and hands-on projects.
+        </p>
+      </div>
+
+      {/* Layout: Image left, content right */}
+      <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8">
+        {/* Left Image */}
+        <div className="lg:w-1/3 w-full">
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-60 sm:h-72 md:h-80 object-cover rounded-lg shadow-lg"
+          />
         </div>
+
+        {/* Right content */}
+        <div className="lg:w-2/3 text-gray-700 dark:text-gray-200 text-sm sm:text-base">
+          <div className="mb-6">
+            <p>{description}</p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <p><strong>Duration:</strong> {duration}</p>
+            <p><strong>Instructor:</strong> {instructorName}</p>
+            <p><strong>Email:</strong> {instructorEmail}</p>
+            <p><strong>Published on:</strong> {new Date(createdAt).toLocaleDateString()}</p>
+            <p><strong>Enrolled:</strong> {updateCount} students</p>
+          </div>
+
+          <div>
+            {seatsLeft > 0 ? (
+              <div className="flex justify-start">
+                {user ? (
+                  <button
+                    onClick={handleEnroll}
+                    className="btn btn-primary transition-colors duration-300 text-white dark:text-white"
+                  >
+                    {enroll ? 'Unenroll' : 'Enroll Now'}
+                  </button>
+                ) : (
+                  <button
+                    disabled
+                    className="px-4 py-2 rounded-md bg-gray-400 dark:bg-gray-700 text-gray-800 dark:text-gray-200 cursor-not-allowed"
+                  >
+                    Please log in to enroll
+                  </button>
+                )}
+              </div>
+            ) : (
+              <h1 className="text-2xl text-red-500">No seats left</h1>
+            )}
+          </div>
+
+          <div>
+            <h1 className="text-2xl mt-3">
+              Seats Left : {seatsLeft >= 0 ? seatsLeft : 0}
+            </h1>
+          </div>
+
+          <Link
+            to="/"
+            className="px-4 py-2 btn rounded-md bg-gray-400 dark:bg-gray-700 text-gray-800 dark:text-gray-200 mt-3 block lg:hidden"
+          >
+            Back To Home
+          </Link>
+        </div>
+      </div>
+    </div>
     );
 };
 export default CourseDetails;
