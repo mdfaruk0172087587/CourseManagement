@@ -80,13 +80,15 @@ const Login = () => {
       });
   }
   return (
-    <div className="hero bg-base-200 min-h-screen">
-      <div className="hero-content flex-col lg:flex-row-reverse">
-        <div className="text-center lg:text-left">
+    <div className="hero">
+      <div className="hero-content flex flex-col lg:flex-row-reverse gap-20">
+        {/* animation */}
+        <div className="text-center lg:text-left ">
           <Lottie style={{ width: '250px' }} animationData={loginLottie} loop={true}></Lottie>
         </div>
-        <div className="card w-full max-w-sm mx-auto shadow-2xl my-5 
-      bg-white dark:bg-gray-800 
+        {/* main from */}
+        <div className="card shadow-2xl my-5 
+       dark:bg-gray-800 
       text-gray-900 dark:text-gray-100
       transition-colors duration-300
     ">
@@ -94,7 +96,7 @@ const Login = () => {
             <title>Login Page</title>
           </Helmet>
           <div className="card-body">
-            <h1 className="text-3xl text-center font-bold mb-6">Login now!</h1>
+            <h1 className="text-3xl text-center font-medium mb-6">Login now!</h1>
             <form onSubmit={handleLogin} className="relative">
               <label className="label">Email</label>
               <input

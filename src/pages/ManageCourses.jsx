@@ -3,6 +3,7 @@ import UseHock from '../hock/UseHock';
 import Manage from '../shared/Manage';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router';
+import { FaTasks } from 'react-icons/fa';
 const ManageCourses = () => {
   const { user } = UseHock();
   const [manageCourse, setManageCourse] = useState([]);
@@ -18,11 +19,23 @@ const ManageCourses = () => {
     }
   }, [user]);
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8 transition-colors duration-300 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 rounded-md shadow-md my-10">
+    <div className="max-w-[93%] mx-auto px-4 py-8 transition-colors duration-300 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       <Helmet>
         <title>Manage Course</title>
       </Helmet>
-      <h1 className="text-3xl font-bold mb-6 text-center">Manage Your Courses</h1>
+
+      {/* Title with icon and description */}
+      <div className="text-center mb-6">
+        <h1 className="inline-flex items-center justify-center gap-2 text-3xl font-medium">
+          <FaTasks className="text-indigo-600" />
+          Manage Your Courses
+        </h1>
+        <p className="max-w-xl mx-auto mt-2 text-gray-600 dark:text-gray-400 text-base leading-relaxed">
+          Here you can view, edit, and delete the courses you have created. Manage your course listings easily and keep your content up to date.
+        </p>
+      </div>
+
+      {/* Table */}
       <div className="overflow-x-auto">
         <table className="table w-full border border-gray-300 dark:border-gray-700">
           <thead className="bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100">
@@ -54,7 +67,13 @@ const ManageCourses = () => {
           </tbody>
         </table>
       </div>
-      <Link to='/' className='px-4 py-2 btn rounded-md bg-gray-400 dark:bg-gray-700 text-gray-800 dark:text-gray-200 mt-3 block lg:hidden'>Back To Home</Link>
+
+      <Link
+        to="/"
+        className="px-4 py-2 btn rounded-md bg-gray-400 dark:bg-gray-700 text-gray-800 dark:text-gray-200 mt-3 block lg:hidden"
+      >
+        Back To Home
+      </Link>
     </div>
   );
 };
