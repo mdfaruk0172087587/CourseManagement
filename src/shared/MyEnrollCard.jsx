@@ -17,7 +17,7 @@ const MyEnrollCard = ({ enroll, setMyEnrollCourse, myEnrollCourse }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`https://assignment-11-server-theta-ecru.vercel.app/enrollments/${id}`)
+                axios.delete(`http://localhost:3000/enrollments/${id}`)
                     .then(res => {
                         if (res.data.deletedCount) {
 

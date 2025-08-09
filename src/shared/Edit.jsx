@@ -12,7 +12,7 @@ const Edit = () => {
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
         // update
-        axios.put(`https://assignment-11-server-theta-ecru.vercel.app/courses/${id}`, data)
+        axios.put(`http://localhost:3000/courses/${id}`, data)
             .then(res => {
                 if (res.data.modifiedCount) {
                     // update success

@@ -119,11 +119,11 @@ const Navbar = () => {
         </div>
         {/* Logo and Project Name - medium+ screens */}
         <Link to='/' className="flex md:hidden items-center space-x-2 ml-2">
-          <img src="/project-logo.png" alt="Logo" className="w-8 h-8" />
+          <img src="/logo.jpg" alt="Logo" className="w-8 h-8" />
         </Link>
         <Link to='/' className="hidden md:flex items-center space-x-3 ml-2">
-          <img src="/project-logo.png" alt="Logo" className="w-10 h-10" />
-          <span className="text-xl font-bold text-blue-600 dark:text-blue-400">
+          <img src="/logo.jpg" alt="Logo" className="w-10 h-10" />
+          <span className="text-xl font-medium text-blue-600 dark:text-blue-400">
             Course Management
           </span>
         </Link>
@@ -135,37 +135,39 @@ const Navbar = () => {
       <div className="navbar-end flex items-center space-x-3">
         {/* Theme toggle */}
         <ThemeToggle />
+
         {user ? (
           <>
-            <img
-              src={user.photoURL}
-              alt={user.displayName || 'User'}
-              className="w-10 h-10 rounded-full object-cover border-2 border-blue-500"
-              title={user.displayName || ''}
-            />
-            <button
-              onClick={handleLogOut}
-              className="btn btn-primary bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
-            >
-              Log Out
-            </button>
+            <div className="dropdown dropdown-end">
+              <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                  <img
+                    src={user.photoURL}
+                    alt={user.displayName || 'User'}
+                    className="w-10 h-10 rounded-full object-cover border-2 border-blue-500"
+                    title={user.displayName || ''}
+                  />
+                </div>
+              </div>
+              <ul tabIndex={0} className="mt-3 z-[1] p-3 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-48 space-y-2">
+                <li className="text-sm text-gray-600 font-semibold pointer-events-none">👤 {user?.displayName}</li>
+
+                <li>
+                  <button
+                    onClick={handleLogOut}
+                    className="btn btn-primary bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 border-none"
+                  >
+                    Log Out
+                  </button>
+                </li>
+              </ul>
+            </div>
           </>
         )
           :
           (
             <>
-              <Link
-                to="/login"
-                className="btn btn-primary bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
-              >
-                Login
-              </Link>
-              <Link
-                to="/register"
-                className="btn btn-primary ml-2 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
-              >
-                Register
-              </Link>
+              <Link to='/login' className='btn btn-primary bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 border-none'>Join Us</Link>
             </>
           )}
       </div>

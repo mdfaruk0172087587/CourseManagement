@@ -25,13 +25,13 @@ export const router = createBrowserRouter([
         index: true,
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('https://assignment-11-server-theta-ecru.vercel.app/courses'),
+        loader: () => fetch('http://localhost:3000/courses'),
         hydrateFallbackElement: <Loading></Loading>
       },
       {
         path: '/courses',
         element: <Courses></Courses>,
-        loader: () => fetch('https://assignment-11-server-theta-ecru.vercel.app/allCourses'),
+        loader: () => fetch('http://localhost:3000/allCourses'),
         hydrateFallbackElement: <Loading></Loading>
       },
       {
@@ -45,7 +45,7 @@ export const router = createBrowserRouter([
         element: <PrivateRoute>
           <CourseDetails></CourseDetails>
         </PrivateRoute>,
-        loader: ({ params }) => fetch(`https://assignment-11-server-theta-ecru.vercel.app/courses/${params.id}`),
+        loader: ({ params }) => fetch(`http://localhost:3000/courses/${params.id}`),
         hydrateFallbackElement: <Loading></Loading>
       },
       {
@@ -66,7 +66,7 @@ export const router = createBrowserRouter([
         element: <PrivateRoute>
           <Edit></Edit>
         </PrivateRoute>,
-        loader: ({ params }) => fetch(`https://assignment-11-server-theta-ecru.vercel.app/courses/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:3000/courses/${params.id}`)
       },
       {
         path: '/register',
