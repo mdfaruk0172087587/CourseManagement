@@ -10,7 +10,7 @@ const Footer = () => {
           <h2 className="text-2xl font-bold flex items-center gap-3">
             <img
               className="w-12 h-12 object-contain"
-              src="/project-logo.png"
+              src="/logo.jpg"
               alt="CourseManagement Logo"
               loading="lazy"
             />
