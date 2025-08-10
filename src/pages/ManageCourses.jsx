@@ -58,7 +58,7 @@ const ManageCourses = () => {
               <tr>
                 <td
                   colSpan="3"
-                  className="text-center py-4 text-gray-500 dark:text-gray-400"
+                  className="text-center py-4 "
                 >
                   No courses added yet.
                 </td>

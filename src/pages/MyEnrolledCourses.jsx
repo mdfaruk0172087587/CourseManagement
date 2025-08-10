@@ -67,7 +67,7 @@ const MyEnrolledCourses = () => {
             ))}
             {myEnrollCourse.length === 0 && (
               <tr>
-                <td colSpan="4" className="text-center py-4 text-gray-500 dark:text-gray-400">
+                <td colSpan="4" className="text-center py-4 ">
                   You haven't enrolled in any courses yet.
                 </td>
               </tr>
