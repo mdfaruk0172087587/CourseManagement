@@ -3,7 +3,7 @@ import { LiaEyeSlash } from 'react-icons/lia';
 import { PiEyesFill } from 'react-icons/pi';
 import UseHock from '../hock/UseHock';
 import Swal from 'sweetalert2';
-import { Link, useLocation, useNavigate } from 'react-router';
+import { Link, useLocation, useNavigate, } from 'react-router';
 import { Helmet } from 'react-helmet-async';
 import Lottie from 'lottie-react';
 import AuthLottie from '../assets/AuthLottie.json'
@@ -25,6 +25,7 @@ const Login = () => {
           showConfirmButton: false,
           timer: 1500
         });
+       
         navigate(location.state || '/');
       })
       .catch(error => {
@@ -36,6 +37,7 @@ const Login = () => {
           timer: 1500
         });
       });
+      
   };
   // handle google login
   const handleGoogleLogin = () => {
@@ -48,6 +50,7 @@ const Login = () => {
           showConfirmButton: false,
           timer: 1500
         });
+        
         navigate(location.state || '/');
       })
       .catch(error => {
@@ -69,6 +72,7 @@ const Login = () => {
           showConfirmButton: false,
           timer: 1500
         });
+       
         navigate(location.state || '/');
       })
       .catch(error => {

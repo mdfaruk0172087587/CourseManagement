@@ -97,7 +97,7 @@ const Register = () => {
           showConfirmButton: false,
           timer: 1500
         });
-        navigate(location.state || '/');
+        navigate('/');
       })
       .catch(error => {
         Swal.fire({
@@ -118,7 +118,7 @@ const Register = () => {
           showConfirmButton: false,
           timer: 1500
         });
-        navigate(location.state || '/');
+        navigate('/');
       })
       .catch(error => {
         Swal.fire({

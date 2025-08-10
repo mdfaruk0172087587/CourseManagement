@@ -6,11 +6,11 @@ import Loading from '../shared/Loading';
 const HomeLayOut = () => {
   const navigation = useNavigation();
   return (
-    <div>
+    <div className='min-h-screen flex flex-col'>
       <header className='sticky top-0 z-50'>
         <Navbar></Navbar>
       </header>
-      <main>
+      <main className='flex-grow'>
         {
           navigation.state === 'loading' ? <Loading></Loading> : <Outlet></Outlet>
         }
