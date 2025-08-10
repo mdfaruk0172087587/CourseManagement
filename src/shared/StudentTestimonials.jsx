@@ -22,7 +22,7 @@ const Testimonials = () => {
   return (
     <section className="my-10 max-w-[94%] mx-auto">
       <h2 className="text-3xl font-medium text-center mb-6">💬 What Our Students Say</h2>
-      <p className="text-center text-gray-600 mb-6 max-w-3xl mx-auto">
+      <p className="text-center mb-6 max-w-3xl mx-auto">
     Our students share their experiences and success stories after completing our courses. 
     Their feedback inspires us to keep delivering high-quality content and practical knowledge.
   </p>

@@ -10,11 +10,11 @@ const Courses = () => {
       <Helmet>
         <title>All Courses</title>
       </Helmet>
-       <h2 className="flex items-center justify-center gap-2 text-3xl md:text-4xl font-medium text-center mb-3 text-primary">
+       <h2 className="flex items-center justify-center gap-2 text-3xl md:text-4xl font-medium text-center mb-3 ">
         <FaBookOpen className="text-indigo-600" />
         All Courses
       </h2>
-      <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
+      <p className="text-center mb-10 max-w-3xl mx-auto">
         Browse through our comprehensive list of courses designed to enhance your skills 
         and open new opportunities. Whether you’re a beginner or advanced learner, find the perfect course for you.
       </p>

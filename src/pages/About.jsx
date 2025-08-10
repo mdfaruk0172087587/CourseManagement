@@ -18,21 +18,21 @@ const About = () => {
         <section className="max-w-[93%] mx-auto px-6 dark:bg-gray-900 transition-colors duration-300 my-5">
           {/* About Title with Icon and Description */}
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-medium text-gray-900 dark:text-white inline-flex items-center justify-center gap-3 mx-auto">
+            <h1 className="text-4xl font-medium inline-flex items-center justify-center gap-3 mx-auto">
               <FaBook className="text-indigo-600" />
               About Course Management
             </h1>
-            <p className="mt-3 max-w-3xl mx-auto text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+            <p className="mt-3 max-w-3xl mx-auto text-lg leading-relaxed">
               Welcome to our Course Management platform, designed to empower educators and learners alike. 
               We provide a seamless environment for creating, managing, and discovering courses that foster growth and learning.
             </p>
           </div>
 
           {/* Content Sections */}
-          <div className="space-y-5 text-gray-800 dark:text-gray-300 leading-relaxed text-lg">
+          <div className="space-y-5 leading-relaxed text-lg">
             {/* Mission */}
             <div>
-              <h2 className="text-2xl font-bold mb-2 text-indigo-700 dark:text-indigo-400 inline-flex items-center gap-2">
+              <h2 className="text-2xl font-bold mb-2 text-indigo-700 inline-flex items-center gap-2">
                 <FaBullseye className="text-indigo-500" />
                 Our Mission
               </h2>

@@ -6,11 +6,11 @@ const PopularCourses = ({ popularPromise }) => {
   const popular = use(popularPromise)
   return (
     <div className="max-w-[96%] mx-auto px-4 py-10">
-      <h2 className="flex items-center justify-center gap-2 text-3xl md:text-4xl font-medium text-center mb-2 text-primary">
+      <h2 className="flex items-center justify-center gap-2 text-3xl md:text-4xl font-medium text-center mb-2 dark:text-white">
         <FaStar className="text-yellow-500" />
         Popular Courses
       </h2>
-      <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
+      <p className="text-center dark:text-white mb-10 max-w-2xl mx-auto">
         Discover our most popular courses, highly rated by learners worldwide. 
         Each course offers hands-on projects, expert guidance, and the latest industry knowledge.
       </p>

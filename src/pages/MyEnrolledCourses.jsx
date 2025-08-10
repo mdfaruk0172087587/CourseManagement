@@ -19,18 +19,18 @@ const MyEnrolledCourses = () => {
     }
   }, [user]);
   return (
-   <div className="max-w-[93%] mx-auto px-4 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300 my-10">
+   <div className="max-w-[93%] mx-auto px-4 dark:bg-gray-900 transition-colors duration-300 my-10">
       <Helmet>
         <title>My Enroll Course</title>
       </Helmet>
 
       {/* Title & Description */}
       <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold mb-2 flex items-center justify-center gap-2 text-primary">
+        <h1 className="text-3xl font-bold mb-2 flex items-center justify-center gap-2">
           <FaBookOpen className="text-indigo-600" />
           My Enroll Courses
         </h1>
-        <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-base flex items-center justify-center gap-2">
+        <p className="max-w-2xl mx-auto text-base flex items-center justify-center gap-2">
           <FaInfoCircle className="text-indigo-500" />
           Here you can view and manage all the courses you have enrolled in. 
           Keep track of your learning journey and take action when needed.

@@ -46,18 +46,18 @@ const Edit = () => {
 
       {/* Title & Description Center */}
       <div className="text-center">
-        <h1 className="text-3xl font-medium flex items-center justify-center gap-2 text-primary">
+        <h1 className="text-3xl font-medium flex items-center justify-center gap-2">
           <FaBookOpen className="text-indigo-600" />
           Edit Course
         </h1>
-        <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-3 leading-relaxed">
+        <p className=" max-w-2xl mx-auto mt-3 leading-relaxed">
           Update your course details below. Make sure all information is accurate and descriptive 
           to attract learners.
         </p>
       </div>
 
       {/* Two Column Layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start dark:bg-gray-900 text-gray-900 dark:text-gray-100 p-6  transition-colors duration-300">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start dark:bg-gray-900 p-6  transition-colors duration-300">
         
         {/* Left Side Info */}
         <div className='justify-center'>
@@ -74,7 +74,7 @@ const Edit = () => {
           </p>
         </div>
          {/* editor */}
-            <h1 className='text-3xl font-medium flex items-center justify-center gap-2 text-primary mt-5'>  <FaEdit />Editor Info</h1>
+            <h1 className='text-3xl font-medium flex items-center justify-center gap-2 mt-5'>  <FaEdit />Editor Info</h1>
            
              <div className="bg-white shadow-md rounded-lg p-6 flex flex-col md:flex-row items-center gap-6">
                 <img
@@ -83,7 +83,7 @@ const Edit = () => {
                     className="w-24 h-24 rounded-full border-4 border-blue-500"
                 />
                 <div className="text-center md:text-left">
-                    <h2 className="text-3xl font-bold flex items-center justify-center md:justify-start gap-3 mb-1">
+                    <h2 className="text-3xl font-bold flex items-center justify-center md:justify-start gap-3 mb-1 text-primary">
                         <FaUser className="text-blue-500" /> {user?.displayName}
                     </h2>
                     <p className="flex items-center justify-center md:justify-start gap-2 text-gray-600 mb-3">

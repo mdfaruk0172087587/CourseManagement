@@ -24,7 +24,7 @@ const TopInstructors = () => {
   return (
     <section className="my-10 max-w-[94%] mx-auto ">
       <h2 className="text-3xl font-medium text-center mb-6">🌟 Top Rated Instructors</h2>
-       <p className="text-center text-gray-600 max-w-3xl mx-auto mb-6">
+       <p className="text-center  max-w-3xl mx-auto mb-6">
         Meet our top-rated instructors who bring years of experience and passion to help you master new skills. 
         They design comprehensive courses that combine theory with practical application to ensure effective learning.
       </p>

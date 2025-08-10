@@ -10,7 +10,7 @@ const NotFound = () => {
             <img
                 src="https://i.ibb.co/W4bscnsz/error2.webp"
                 alt="Not Found"
-                className="w-96 max-w-full mb-8"
+                className="w-96 max-w-full mb-2"
             />
             <h1 className="text-6xl font-bold text-indigo-600">404</h1>
             <p className="text-2xl mt-4 text-gray-800 font-semibold">Page Not Found</p>

@@ -59,6 +59,14 @@ export const router = createBrowserRouter([
           <MyEnrolledCourses></MyEnrolledCourses>
         </PrivateRoute>
       },
+       {
+        path : '/login',
+        element: <Login></Login>
+      },
+        {
+        path: '/register',
+        element: <Register></Register>
+      },
       {
         path: '/edit/:id',
         element: <PrivateRoute>
@@ -66,14 +74,6 @@ export const router = createBrowserRouter([
         </PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:3000/courses/${params.id}`)
       },
-      {
-        path: '/register',
-        element: <Register></Register>
-      },
-      {
-        path: '/login',
-        element: <Login></Login>
-      }
     ]
   },
   {

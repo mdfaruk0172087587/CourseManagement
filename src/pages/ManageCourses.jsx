@@ -19,7 +19,7 @@ const ManageCourses = () => {
     }
   }, [user]);
   return (
-    <div className="max-w-[93%] mx-auto px-4 py-8 transition-colors duration-300 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <div className="max-w-[93%] mx-auto px-4 py-8 transition-colors duration-300 dark:bg-gray-900">
       <Helmet>
         <title>Manage Course</title>
       </Helmet>
@@ -30,7 +30,7 @@ const ManageCourses = () => {
           <FaTasks className="text-indigo-600" />
           Manage Your Courses
         </h1>
-        <p className="max-w-xl mx-auto mt-2 text-gray-600 dark:text-gray-400 text-base leading-relaxed">
+        <p className="max-w-xl mx-auto mt-2 text-base leading-relaxed">
           Here you can view, edit, and delete the courses you have created. Manage your course listings easily and keep your content up to date.
         </p>
       </div>

@@ -4,7 +4,7 @@ import Modal from './Modal';
 const Footer = () => {
   return (
     <footer className="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 px-6 py-10 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="max-w-[97%] mx-auto grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* Logo & Slogan */}
         <div className="flex flex-col items-start space-y-3">
           <h2 className="text-2xl font-medium flex items-center gap-3">

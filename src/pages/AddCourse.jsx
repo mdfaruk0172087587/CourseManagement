@@ -46,11 +46,11 @@ const AddCourse = () => {
 
       {/* Title & Description */}
       <div className="text-center">
-        <h1 className="text-3xl font-bold flex items-center justify-center gap-2 text-primary">
+        <h1 className="text-3xl font-bold flex items-center justify-center gap-2">
           <FaBookOpen className="text-indigo-600" />
           Add Course
         </h1>
-        <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-3 leading-relaxed flex items-center justify-center gap-2">
+        <p className=" dark:text-gray-400 max-w-2xl mx-auto mt-3 leading-relaxed flex items-center justify-center gap-2">
           <FaInfoCircle className="text-indigo-500" />
           Upload your course details below. Make sure all information is
           accurate and descriptive to attract learners.
@@ -58,7 +58,7 @@ const AddCourse = () => {
       </div>
 
       {/* Two Column Layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start dark:bg-gray-900 text-gray-900 dark:text-gray-100 p-6 transition-colors duration-300 rounded-lg shadow-md mt-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start dark:bg-gray-900  dark:text-gray-100 p-6 transition-colors duration-300 rounded-lg shadow-md mt-6">
         {/* Left Side Info */}
         <div>
           {/* Helpful Tips */}
@@ -82,7 +82,7 @@ const AddCourse = () => {
           </div>
 
           {/* Editor Info */}
-          <h2 className="text-2xl font-semibold flex items-center justify-center gap-2 text-primary mt-8">
+          <h2 className="text-2xl font-semibold flex items-center justify-center gap-2 mt-8">
             <FaUser className="text-blue-500" /> User Info
           </h2>
           <div className="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 flex flex-col md:flex-row items-center gap-6 mt-4">
@@ -92,7 +92,7 @@ const AddCourse = () => {
               className="w-24 h-24 rounded-full border-4 border-blue-500"
             />
             <div className="text-center md:text-left">
-              <h3 className="text-2xl font-bold flex items-center justify-center md:justify-start gap-2 mb-1">
+              <h3 className="text-2xl font-bold flex items-center justify-center text-primary md:justify-start gap-2 mb-1">
                 <FaUser className="text-blue-500" /> {user?.displayName}
               </h3>
               <p className="flex items-center justify-center md:justify-start gap-2 text-gray-600 dark:text-gray-400">
@@ -117,7 +117,6 @@ const AddCourse = () => {
                 placeholder="Title"
               />
             </div>
-
             <div>
               <label className="label flex items-center gap-2 font-semibold">
                 <FaAlignLeft className="text-indigo-500" /> Description
@@ -143,7 +142,6 @@ const AddCourse = () => {
                 placeholder="https://example.com/image.jpg"
               />
             </div>
-
             <div>
               <label className="label flex items-center gap-2 font-semibold">
                 <FaClock className="text-indigo-500" /> Duration
@@ -169,7 +167,7 @@ const AddCourse = () => {
           {/* Back Button */}
           <Link
             to="/"
-            className="px-4 py-2 btn rounded-md bg-gray-400 dark:bg-gray-700 text-gray-800 dark:text-gray-200 mt-3 block lg:hidden flex items-center justify-center gap-2"
+            className="px-4 py-2 btn rounded-md dark:text-gray-200 mt-3 block lg:hidden flex items-center justify-center gap-2 hover:bg-blue-700 text-white bg-blue-500 dark:hover:bg-blue-600 transition-colors border-none"
           >
             <FaArrowLeft /> Back To Home
           </Link>

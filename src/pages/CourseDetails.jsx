@@ -109,17 +109,17 @@ const CourseDetails = () => {
         }
     };
     return (
-          <div className="max-w-[93%] mx-auto p-4 sm:p-6 md:p-10  dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300 mb-5">
+          <div className="max-w-[93%] mx-auto p-4 sm:p-6 md:p-10  dark:bg-gray-900 transition-colors duration-300 mb-5">
       <Helmet>
         <title>Course Details</title>
       </Helmet>
 
       {/* Title and Icon centered */}
       <div className="text-center mb-3">
-        <h2 className="text-3xl md:text-4xl font-medium text-primary inline-flex items-center justify-center gap-2 mx-auto">
+        <h2 className="text-3xl md:text-4xl font-medium inline-flex items-center justify-center gap-2 mx-auto">
           {title} <FaBookOpen className="text-indigo-600" />
         </h2>
-        <p className="max-w-2xl mx-auto mt-2 text-gray-600 dark:text-gray-300 flex items-center justify-center gap-2 text-sm sm:text-base">
+        <p className="max-w-2xl mx-auto mt-2 flex items-center justify-center gap-2 text-sm sm:text-base">
           <FaInfoCircle className="text-blue-500" />
           Explore this comprehensive course designed to enhance your skills with expert guidance and hands-on projects.
         </p>
@@ -137,7 +137,7 @@ const CourseDetails = () => {
         </div>
 
         {/* Right content */}
-        <div className="lg:w-2/3 text-gray-700 dark:text-gray-200 text-sm sm:text-base">
+        <div className="lg:w-2/3 text-sm sm:text-base">
           <div className="mb-6">
             <p>{description}</p>
           </div>
