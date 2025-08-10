@@ -9,7 +9,7 @@ const ManageCourses = () => {
   const [manageCourse, setManageCourse] = useState([]);
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/manageCourses?instructorEmail=${user.email}`, {
+      fetch(`https://assignment-11-server-theta-ecru.vercel.app/manageCourses?instructorEmail=${user.email}`, {
         headers: {
           authorization: `Bearer ${user?.accessToken}`
         }

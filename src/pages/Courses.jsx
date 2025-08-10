@@ -15,7 +15,7 @@ const Courses = () => {
       if (title) queryParams.append('title', title);
       if (sortDesc) queryParams.append('sort', 'desc');
 
-      const res = await fetch(`http://localhost:3000/allCourses?${queryParams.toString()}`);
+      const res = await fetch(`https://assignment-11-server-theta-ecru.vercel.app/allCourses?${queryParams.toString()}`);
       const data = await res.json();
       setCourses(data);
     } catch (error) {

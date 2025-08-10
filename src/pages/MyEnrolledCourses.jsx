@@ -9,7 +9,7 @@ const MyEnrolledCourses = () => {
   const [myEnrollCourse, setMyEnrollCourse] = useState([]);
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/myEnrolledCourses?email=${user.email}`, {
+      fetch(`https://assignment-11-server-theta-ecru.vercel.app/myEnrolledCourses?email=${user.email}`, {
         headers: {
           authorization: `Bearer ${user?.accessToken}`
         }

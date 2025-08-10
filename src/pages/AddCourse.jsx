@@ -15,7 +15,7 @@ const AddCourse = () => {
     const Data = Object.fromEntries(formData.entries())
     const newPost = { ...Data, instructorName: user?.displayName, instructorEmail: user?.email, createdAt: new Date().toISOString() }
     // post
-    axios.post('http://localhost:3000/courses', newPost)
+    axios.post('https://assignment-11-server-theta-ecru.vercel.app/courses', newPost)
       .then(res => {
         if (res.data.insertedId) {
           Swal.fire({
