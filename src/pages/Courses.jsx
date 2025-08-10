@@ -2,12 +2,15 @@ import React, { useEffect, useState, useRef } from 'react';
 import CoursesCard from '../shared/CoursesCard';
 import { Helmet } from 'react-helmet-async';
 import { FaBookOpen } from 'react-icons/fa';
+import UseHock from '../hock/UseHock';
+import Loading from '../shared/Loading';
 
 const Courses = () => {
   const [courses, setCourses] = useState([]);
   const [searchTitle, setSearchTitle] = useState('');
   const [sortByEnroll, setSortByEnroll] = useState(false);
   const debounceTimeout = useRef(null);
+  const {loading} = UseHock();
 
   const fetchCourses = async (title, sortDesc) => {
     try {
@@ -32,13 +35,9 @@ const Courses = () => {
 
     return () => clearTimeout(debounceTimeout.current);
   }, [searchTitle, sortByEnroll]);
-
-  // সার্চ বক্স চেঞ্জ হ্যান্ডলার
   const handleSearchChange = (e) => {
     setSearchTitle(e.target.value);
   };
-
-  // enrollCount অনুসারে sort বাটন ক্লিক হ্যান্ডলার
   const toggleSortByEnroll = () => {
     setSortByEnroll(prev => !prev);
   };
@@ -48,7 +47,9 @@ const Courses = () => {
     setSearchTitle('');
     setSortByEnroll(false);
   };
-
+if(loading){
+  return <Loading></Loading>
+}
   return (
     <div className="max-w-[96%] mx-auto px-4 py-10">
       <Helmet>
