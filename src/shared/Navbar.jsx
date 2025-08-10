@@ -8,32 +8,32 @@ const Navbar = () => {
   const Links = user ? (
     <>
       <li>
-        <NavLink to='/' className={({ isActive }) => (isActive ? 'bg-amber-300' : '')}>
+        <NavLink to='/' className={({ isActive }) => (isActive ? 'text-primary font-bold border-b-2 border-primary' : 'text-gray-700 hover:text-primary')}>
           Home
         </NavLink>
       </li>
       <li>
-        <NavLink to='/courses' className={({ isActive }) => (isActive ? 'bg-amber-300' : '')}>
+        <NavLink to='/courses' className={({ isActive }) => (isActive ? 'text-primary font-bold border-b-2 border-primary' : 'text-gray-700 hover:text-primary')}>
           All Courses
         </NavLink>
       </li>
       <li>
-        <NavLink to='/addCourse' className={({ isActive }) => (isActive ? 'bg-amber-300' : '')}>
+        <NavLink to='/addCourse' className={({ isActive }) => (isActive ? 'text-primary font-bold border-b-2 border-primary' : 'text-gray-700 hover:text-primary')}>
           Add Courses
         </NavLink>
       </li>
       <li>
-        <NavLink to='/manageCourses' className={({ isActive }) => (isActive ? 'bg-amber-300' : '')}>
+        <NavLink to='/manageCourses' className={({ isActive }) => (isActive ? 'text-primary font-bold border-b-2 border-primary' : 'text-gray-700 hover:text-primary')}>
           Manage Courses
         </NavLink>
       </li>
       <li>
-        <NavLink to='/myEnrollCourse' className={({ isActive }) => (isActive ? 'bg-amber-300' : '')}>
+        <NavLink to='/myEnrollCourse' className={({ isActive }) => (isActive ? 'text-primary font-bold border-b-2 border-primary' : 'text-gray-700 hover:text-primary')}>
           My Enroll Courses
         </NavLink>
       </li>
       <li>
-        <NavLink to='/about' className={({ isActive }) => (isActive ? 'bg-amber-300' : '')}>
+        <NavLink to='/about' className={({ isActive }) => (isActive ? 'text-primary font-bold border-b-2 border-primary' : 'text-gray-700 hover:text-primary')}>
           About
         </NavLink>
       </li>
@@ -41,17 +41,17 @@ const Navbar = () => {
   ) : (
     <>
       <li>
-        <NavLink to='/' className={({ isActive }) => (isActive ? 'bg-amber-300' : '')}>
+        <NavLink to='/' className={({ isActive }) => (isActive ? 'text-primary font-bold border-b-2 border-primary' : 'text-gray-700 hover:text-primary')}>
           Home
         </NavLink>
       </li>
       <li>
-        <NavLink to='/courses' className={({ isActive }) => (isActive ? 'bg-amber-300' : '')}>
+        <NavLink to='/courses' className={({ isActive }) => (isActive ? 'text-primary font-bold border-b-2 border-primary' : 'text-gray-700 hover:text-primary')}>
           All Courses
         </NavLink>
       </li>
       <li>
-        <NavLink to='/about' className={({ isActive }) => (isActive ? 'bg-amber-300' : '')}>
+        <NavLink to='/about' className={({ isActive }) => (isActive ? 'text-primary font-bold border-b-2 border-primary' : 'text-gray-700 hover:text-primary')}>
           About
         </NavLink>
       </li>
